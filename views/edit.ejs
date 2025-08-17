@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+                                   initial-scale=1.0">
+
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+ <div class="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-900 text-white px-6 py-12">
+
+  <!-- Animated Background Layer -->
+  <div class="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-purple-700 via-blue-800 to-indigo-700 opacity-20 blur-3xl"></div>
+
+  <!-- Foreground Form Content -->
+  <form method="POST" action="/update/<%= post._id %>" class="relative z-10 w-full max-w-2xl bg-zinc-800 p-8 rounded-lg shadow-2xl border border-zinc-700 space-y-6">
+    <h2 class="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+      ✍️ Edit Your Post
+    </h2>
+
+    <textarea
+      name="content"
+      rows="5"
+      placeholder="Write something awesome..."
+      class="w-full px-4 py-3 bg-zinc-900 text-white rounded-lg resize-none outline-none border border-zinc-700 focus:ring-2 focus:ring-blue-500 shadow-md transition"
+    ><%= post.content %></textarea>
+
+    <button
+      type="submit"
+      class="w-full px-10 py-3 bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transform transition duration-300 ease-in-out tracking-wide uppercase"
+    >
+      🚀 Update Post
+    </button>
+  </form>
+</div>
+
+
+</body>
+
+</html>
